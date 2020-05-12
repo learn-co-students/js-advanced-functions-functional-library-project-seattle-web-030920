@@ -136,9 +136,7 @@ const fi = (function() {
 
     },
     uniq: function(collection, sorted=false, iteratee=false) {
-      if (sorted) {
-        return fi.uniqSorted(collection, iteratee)
-      } else if (!iteratee) {
+      if (!iteratee) {
         return Array.from(new Set(collection))
       } else {
         const modifiedVals = new Set()
@@ -153,7 +151,7 @@ const fi = (function() {
         return Array.from(uniqVals)
       }
     },
-    
+
     functions: function(obj) {
       const functionNames = []
 
